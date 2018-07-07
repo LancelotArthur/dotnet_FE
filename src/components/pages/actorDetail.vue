@@ -67,7 +67,7 @@ export default {
     }
   },
   mounted: function () {
-    axios.get('http://localhost:8888/celebrity/' + this.$route.params.id).then(response => {
+    axios.get('http://111.231.141.52:8888/celebrity/' + this.$route.params.id).then(response => {
       this.actor_info = response.data.result
       var occupation = ''
       if (this.actor_info.writer) {
@@ -89,7 +89,7 @@ export default {
         type: 'error'
       })
     })
-    axios.get('http://localhost:8888/celebrity/' + this.$route.params.id + '/movie').then(response => {
+    axios.get('http://111.231.141.52:8888/celebrity/' + this.$route.params.id + '/movie').then(response => {
       if (response.data.result.Writers) {
         this.actor_info_movie = response.data.result.Writers
       } else if (response.data.result.Producers) {

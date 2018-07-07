@@ -73,7 +73,7 @@ export default {
       this.$router.push('/profile')
     },
     logout: function () {
-      axios.post('http://localhost:8888/logout', qs.stringify({userName: sessionStorage.getItem('userName')}), {
+      axios.post('http://111.231.141.52:8888/logout', qs.stringify({userName: sessionStorage.getItem('userName')}), {
         headers: {
           'Authorization': sessionStorage.getItem('userName') + '_' + sessionStorage.getItem('token')
         }

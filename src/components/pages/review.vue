@@ -52,10 +52,10 @@ export default {
     }
   },
   mounted: function () {
-    axios.get('http://localhost:8888/review').then(response => {
+    axios.get('http://111.231.141.52:8888/review').then(response => {
       var temp = response.data.result.slice(0, 20)
       temp.forEach(element => {
-        axios.get('http://localhost:8888/movie/' + element.movie_id).then(response => {
+        axios.get('http://111.231.141.52:8888/movie/' + element.movie_id).then(response => {
           if (response.data.status === '200') {
             element.movie = response.data.result
             this.movie_review.push(element)

@@ -92,7 +92,7 @@ export default {
   },
   methods: {
     login: function () {
-      axios.post('http://localhost:8888/login', qs.stringify(this.info), {
+      axios.post('http://111.231.141.52:8888/login', qs.stringify(this.info), {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
@@ -190,7 +190,7 @@ export default {
           message: '请输入昵称'
         })
       } else {
-        axios.post('http://localhost:8888/register', qs.stringify(this.newInfo)).then(response => {
+        axios.post('http://111.231.141.52:8888/register', qs.stringify(this.newInfo)).then(response => {
           if (response.data.status === '201') {
             this.ToLogin()
             this.$message({

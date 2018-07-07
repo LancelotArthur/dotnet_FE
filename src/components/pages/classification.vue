@@ -102,7 +102,7 @@ export default {
     }
   },
   mounted: function () {
-    axios.get('http://localhost:8888/explore?type=year&tag=2016-2017&sort=ReleaseTime').then(response => {
+    axios.get('http://111.231.141.52:8888/explore?type=year&tag=2016-2017&sort=ReleaseTime').then(response => {
       this.movie_data = response.data.result
     }, response => {
       this.$message({
@@ -122,7 +122,7 @@ export default {
       this.$router.push('/movieDetail/' + id)
     },
     handleLanguageClick: function (index) {
-      axios.get('http://localhost:8888/explore?tag=' + index + '&type=language&sort=ReleaseTime').then(response => {
+      axios.get('http://111.231.141.52:8888/explore?tag=' + index + '&type=language&sort=ReleaseTime').then(response => {
         this.movie_data = response.data.result
       }, response => {
         this.$message({
@@ -132,7 +132,7 @@ export default {
       })
     },
     handleGenresClick: function (index) {
-      axios.get('http://localhost:8888/explore?tag=' + index + '&type=genres&sort=ReleaseTime').then(response => {
+      axios.get('http://111.231.141.52:8888/explore?tag=' + index + '&type=genres&sort=ReleaseTime').then(response => {
         this.movie_data = response.data.result
       }, response => {
         this.$message({

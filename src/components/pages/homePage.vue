@@ -127,7 +127,7 @@ export default {
     }
   },
   mounted: function () {
-    axios.get('http://localhost:8888/explore?type=year&tag=2016-2017&sort=defualt').then(response => {
+    axios.get('http://111.231.141.52:8888/explore?type=year&tag=2016-2017&sort=defualt').then(response => {
       this.movie_data = response.data.result
       for (let index = 0; index < 6; index++) {
         this.movie_inTheaters.push(this.movie_data[index])
@@ -145,7 +145,7 @@ export default {
         type: 'error'
       })
     })
-    axios.get('http://localhost:8888/explore?tag=汉语&type=language&sort=ReleaseTime').then(response => {
+    axios.get('http://111.231.141.52:8888/explore?tag=汉语&type=language&sort=ReleaseTime').then(response => {
       this.movie_recent = response.data.result
     }, response => {
       this.$message({
@@ -153,10 +153,10 @@ export default {
         type: 'error'
       })
     })
-    axios.get('http://localhost:8888/review').then(response => {
+    axios.get('http://111.231.141.52:8888/review').then(response => {
       var temp = response.data.result.slice(0, 10)
       temp.forEach(element => {
-        axios.get('http://localhost:8888/movie/' + element.movie_id).then(response => {
+        axios.get('http://111.231.141.52:8888/movie/' + element.movie_id).then(response => {
           if (response.data.status === '200') {
             element.movie = response.data.result
             this.movie_review.push(element)
@@ -180,7 +180,7 @@ export default {
       if (tab.label === 'more') {
         this.$router.push('/pickMovies')
       } else {
-        axios.get('http://localhost:8888/explore?tag=' + tab.label + '&type=language&sort=ReleaseTime').then(response => {
+        axios.get('http://111.231.141.52:8888/explore?tag=' + tab.label + '&type=language&sort=ReleaseTime').then(response => {
           this.movie_recent = response.data.result
         }, response => {
           this.$message({

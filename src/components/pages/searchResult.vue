@@ -53,7 +53,7 @@ export default {
     }
   },
   mounted: function () {
-    axios.get('http://localhost:8888/explore?type=keyword&tag=' + this.$route.params.str + '&sort=ReleaseTime').then(response => {
+    axios.get('http://111.231.141.52:8888/explore?type=keyword&tag=' + this.$route.params.str + '&sort=ReleaseTime').then(response => {
       if (response.data.result[0]) {
         this.movie_data = response.data.result
         this.movie_data.forEach(element => {

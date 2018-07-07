@@ -74,7 +74,7 @@ export default {
     }
   },
   mounted: function () {
-    axios.get('http://localhost:8888/explore?type=year&tag=2016-2017&sort=ReleaseTime').then(response => {
+    axios.get('http://111.231.141.52:8888/explore?type=year&tag=2016-2017&sort=ReleaseTime').then(response => {
       this.movie_data = response.data.result
       this.movie_data.forEach(element => {
         element.rate = element.rate / 2

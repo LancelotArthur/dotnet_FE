@@ -100,7 +100,7 @@ export default {
     }
   },
   mounted: function () {
-    axios.get('http://localhost:8888/movie/' + this.$route.params.id).then(response => {
+    axios.get('http://111.231.141.52:8888/movie/' + this.$route.params.id).then(response => {
       this.movie_data = response.data.result
       var genres = this.movie_data.genres.slice(2, this.movie_data.genres.length - 2).split('\', \'')
       this.movie_data.genres = genres.join(' / ')
@@ -113,7 +113,7 @@ export default {
         type: 'error'
       })
     })
-    axios.get('http://localhost:8888/movie/' + this.$route.params.id + '/celebrity').then(response => {
+    axios.get('http://111.231.141.52:8888/movie/' + this.$route.params.id + '/celebrity').then(response => {
       this.movie_data_celebrity = response.data.result
     }, response => {
       this.$message({
@@ -121,7 +121,7 @@ export default {
         type: 'error'
       })
     })
-    axios.get('http://localhost:8888/movie/' + this.$route.params.id + '/review').then(response => {
+    axios.get('http://111.231.141.52:8888/movie/' + this.$route.params.id + '/review').then(response => {
       this.movie_data_review = response.data.result
       this.movie_data_review.forEach(element => {
         element.isHelp = false
