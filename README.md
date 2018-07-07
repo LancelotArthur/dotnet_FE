@@ -1,4 +1,4 @@
-# learning
+# HyperSearch
 
 > A Vue.js project
 
